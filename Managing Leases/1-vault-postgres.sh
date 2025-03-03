@@ -50,3 +50,17 @@ vault login TOKEN
 # Generate a new credential
 vault read database/creds/readonly
 
+# Do a lookup
+vault lease lookup LEASE_ID
+
+# Revoke the lease directly
+vault lease revoke LEASE_ID
+
+# Get a new lease
+vault read database/creds/readonly
+
+# Revoke the token
+vault token revoke -self
+
+# Log back in with the root token
+vault login $root
